@@ -8,11 +8,37 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+    <div class="explanation">
+      <div class="content-explanation">
+        <div class="usage">
+          <h3 class="title">Cara Penggunaan</h3>
+        <div class="text">
+          <p>Pada Kalkulator menerima 2 inputan yaitu value 1 sebagai <b>(a)</b> dan value 2 sebagai <b>(b)</b></p>
+          <ol>
+            <li>Masukkan value kemudian klik tombol <b>add</b> => <b>(a)</b></li>
+            <li>Pilih Operator <b>(+, -, x, /)</b></li>
+            <li>Masukkan value kemudian klik tombol <b>add</b> => <b>(b)</b></li>
+            <li>Tombol <b>add</b> akan disable ketika <b>(a)</b> dan <b>(b)</b> telah diinputkan</li>
+            <li>Klik tombol <b>Submit</b> untuk mendapatkan hasil perhitungan</li>
+            <li>Klik tombol <b>Reset</b> untuk melakukan perhitungan lagi</li>
+          </ol>
+        </div>
+        </div>
+        <div class="validation">
+          <h3 class="title">Validasi</h3>
+          <ul>
+            <li>Ketika inputan kosong dan user klik tombol <b>add</b> akan mucul alert dengan pesan <i>"inputan tidak boleh kosong"</i> </li>
+            <li>Ketika user menekan operator perhitungan namun belum memasukkan inputan <b>(a)</b> akan muncul alert dengan pesan <i>"Inputkan angka terlebih dahulu!"</i></li>
+            <li>Ketika user menekan tombol <b>Submit</b> namun belum memasukkan salah satu inputan <b>(a)</b> atau <b>(b)</b> akan mucul alert dengan pesan <i>"Masukkan inputan angka terlebih dahulu!"</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="main-content">
         <div class="row">
           <div class="left input">
-            <input id="number" type="number"/>
+            <input id="number" type="number" placeholder="input your number..."/>
           </div>
           <div class="right">
             <button id="add" onclick="handleAddBtn()">add</button>
@@ -20,10 +46,10 @@
         </div>
         <div class="row">
           <div class="left operator">
-            <p id="sum">+</p>
-            <p id="substract">-</p>
-            <p id="multiply">x</p>
-            <p id="divide">/</p>
+            <p id="sum" class="action">+</p>
+            <p id="substract" class="action">-</p>
+            <p id="multiply" class="action">x</p>
+            <p id="divide" class="action">/</p>
           </div>
           <div class="right">
             <button id="reset">Reset</button>
@@ -39,7 +65,6 @@
         </div>
       </div>
     </div>
-
     <script src="assets/js/script.js"></script>
   </body>
 </html>
