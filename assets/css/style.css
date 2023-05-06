@@ -9,6 +9,10 @@ html, body {
    height: 100%;
 }
 
+body {
+   background: url("https://images.unsplash.com/photo-1538994426593-a1fc62edcbb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhY2tncm91bmQlMjBjYW52YXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+}
+
 .container {
    display: flex;
    justify-content: center;
