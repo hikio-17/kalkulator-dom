@@ -53,6 +53,9 @@ const handleSubmit = () => {
     result = sum(a, b);
   } else if (operator === 'divide') {
     result = divide(a, b);
+    if (!Number.isInteger(result)) {
+      result = parseFloat(result).toFixed(4);
+    }
   } else if (operator === 'substract') {
     result = substract(a, b);
   } else if (operator === 'multiply') {
@@ -98,6 +101,7 @@ const handleResetBtn = () => {
   number.value = '';
   display.innerText = '';
   document.getElementById('add').disabled = false;
+  submit.disabled = false;
 }
 reset.addEventListener('click', handleResetBtn);
 
