@@ -7,6 +7,7 @@ const operators = document.getElementsByClassName('action');
 let numbers = [];
 let operator = '';
 let result = '';
+let simbol = '';
 
 // create function basic operation mathematic
 const sum = (a, b) => a + b;
@@ -23,7 +24,8 @@ const action = e => {
 
   if (operator !== '' && numbers.length === 1) {
     operator = e.target.id;
-    display.innerText = display.textContent[0] + e.target.textContent;
+    simbol = e.target.textContent;
+    display.innerText = numbers[0] + simbol;
     return;
   }
 
@@ -31,7 +33,8 @@ const action = e => {
     return;
   }
   operator = e.target.id;
-  renderDisplay(e.target.textContent);
+  simbol = e.target.textContent;
+  display.innerText = numbers[0] + simbol;
 }
 
 for (let item of operators) {
@@ -62,7 +65,7 @@ const handleSubmit = () => {
     result = multiply(a, b);
   }
 
-  renderDisplay(`=${result}`);
+  display.innerText = `${numbers[0]} ${simbol} ${numbers[1]} = ${result}`
   submit.disabled = true;
 }
 submit.addEventListener('click', handleSubmit);
@@ -86,10 +89,14 @@ const handleAddBtn = () => {
   }
 
   numbers.push(number.value);
-  renderDisplay(number.value);
+
+  if (numbers.length === 1) {
+    display.innerText = numbers[0];
+  }
   number.value = '';
 
   if (numbers.length >= 2) {
+    display.innerText = numbers[0] + simbol + numbers[1]
     document.getElementById('add').disabled = true;
   }
 }
